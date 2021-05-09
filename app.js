@@ -47,7 +47,21 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 //   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 //   next();
 // });
-app.use(cors());
+const allowedOrigins = ['http://localhost:3000',
+  'https://blog-infinity.netlify.app/'];
+app.use(cors({
+  origin: function(origin, callback){
+    // allow requests with no origin
+    // (like mobile apps or curl requests)
+    if(!origin) return callback(null, true);
+    if(allowedOrigins.indexOf(origin) === -1){
+      let msg = 'The CORS policy for this site does not ' +
+        'allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  }
+}));
 
 app.use('/feed', feedRoutes);
 app.use('/auth', authRoutes);
