@@ -48,7 +48,7 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 //   next();
 // });
 const allowedOrigins = ['http://localhost:3000',
-  'https://blog-infinity.netlify.app/'];
+  'https://blog-infinity.netlify.app'];
 app.use(cors({
   origin: function(origin, callback){
     // allow requests with no origin
