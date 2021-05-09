@@ -1,6 +1,30 @@
 # Blog Infinity API
 Developed a real-world blogging platform API. It has features like Adding Post, Editing Post, Deleting Post, Image Uploading, and Advanced Authentication.
 
+#API Docs
+
+## GET REQUEST
+
+### /feed/posts -> To get all the posts
+### /feed/post/id -> To get a single post of particular id
+### /feed/login -> To login the Blog Infinity
+
+## POST REQUEST
+
+### /feed/post/ -> To post a particular blog
+### /feed/signup -> To sign up the blog
+
+## PUT REQUEST
+
+### /feed/post/ -> To update a particular blog
+
+
+## DELETE REQUEST
+
+### /feed/post/id -> To delete a single post of particular id
+
+
+
 ---
 ## Requirements
 
