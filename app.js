@@ -62,7 +62,10 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(
     'mongodb+srv://phoenix_124:Nikhil@12042001@shop.kxdzn.mongodb.net/Blog?retryWrites=true&w=majority'
-  )
+  ,{
+    useUnifiedTopology : true,
+    useNewUrlParser : true
+  })
   .then(result => {
     app.listen(8080);
   })
